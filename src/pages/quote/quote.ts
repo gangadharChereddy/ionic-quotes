@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { ViewController,NavParams} from 'ionic-angular'
+import { SocialSharing } from '@ionic-native/social-sharing';
+
+import { ViewController,NavParams} from 'ionic-angular';
 
 
 @Component({
@@ -12,9 +14,19 @@ export class QuotePage {
   text:string;
   
 constructor(private viewCtrl:ViewController,
-private navParams: NavParams){}
+private navParams: NavParams,
+private socialSharing: SocialSharing
+){}
 onClose(remove =false){
 this.viewCtrl.dismiss(remove);
+}
+
+onShareToWhatsapp(){
+  this.socialSharing.shareViaWhatsApp(this.text).then(() => {
+    console.log('success');
+  }).catch((error) => {
+    console.log(error);
+  });
 }
 ionViewDidLoad(){
   this.person=this.navParams.get('person');

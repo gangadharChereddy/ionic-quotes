@@ -1,3 +1,4 @@
+import { SocialSharing } from '@ionic-native/social-sharing';
 import { SettingsService } from './../services/settings';
 import { QuotesService } from './../services/quotes';
 
@@ -44,7 +45,8 @@ import { FavouritesPage } from '../pages/favourites/favourites';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     QuotesService,
-    SettingsService
+    SettingsService,
+    SocialSharing
   ]
 })
 export class AppModule {}
