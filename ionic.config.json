@@ -1,6 +1,6 @@
 {
   "name": "quotes",
-  "app_id": "",
+  "app_id": "cfa6f445",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

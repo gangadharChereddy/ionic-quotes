@@ -12,6 +12,8 @@ export class QuotePage {
 
   person :string;
   text:string;
+  subject :string = 'This Quote is sharing from the Quotes App. You can download the App from this link';
+  url :string='https://drive.google.com/file/d/0B9IGPSNh8ibAUGVVMXV1T01DaUE/view?usp=sharing';
   
 constructor(private viewCtrl:ViewController,
 private navParams: NavParams,
@@ -22,7 +24,7 @@ this.viewCtrl.dismiss(remove);
 }
 
 onShareToWhatsapp(){
-  this.socialSharing.shareViaWhatsApp(this.text).then(() => {
+  this.socialSharing.share(this.text).then(() => {
     console.log('success');
   }).catch((error) => {
     console.log(error);

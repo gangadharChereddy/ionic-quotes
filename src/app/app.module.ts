@@ -16,6 +16,20 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { FavouritesPage } from '../pages/favourites/favourites';
 
+import { HttpModule } from '@angular/http';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBGAnKV48u88tpVS03yYyjm5Iw2wLCSPh0",
+  authDomain: "ionic-angularfire-f74d6.firebaseapp.com",
+  databaseURL: "https://ionic-angularfire-f74d6.firebaseio.com",
+  projectId: "ionic-angularfire-f74d6",
+  storageBucket: "ionic-angularfire-f74d6.appspot.com",
+  messagingSenderId: "892257994991"
+};
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -28,6 +42,9 @@ import { FavouritesPage } from '../pages/favourites/favourites';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
