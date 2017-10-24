@@ -1,7 +1,6 @@
 import { QuotesPage } from './../quotes/quotes';
 import { Quote } from './../../data/quote.interface';
 import { Component,OnInit } from '@angular/core';
-import  quotes from './../../data/quotes';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
